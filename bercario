@@ -1,0 +1,125 @@
+import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
+import 'dart:io';
+import 'package:async/async.dart';
+
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: "Berçario Infantil",
+    home: Home(),
+  )
+  );
+}
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+    
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Berçário Infantil"),
+          centerTitle: true,
+          backgroundColor: Colors.pink,
+          actions: <Widget>[
+            IconButton(icon: Icon(Icons.refresh),
+            onPressed: (){},)
+          ],
+        ),
+
+        body: Stack(children: <Widget>[Image.asset("images/imagem.jpg"),
+
+        SingleChildScrollView(
+          padding: EdgeInsets.all(10.0),
+          child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          
+          children: <Widget>[
+            Text("Bem-vindo",
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.pink, fontSize: 35.0),
+            ),
+            
+            // Image.asset("images/imagem.jpg"),
+            
+            // Icon(Icons.person_outline),
+            
+            FlatButton(
+              child: Text("Nome da Criança",
+              style: TextStyle(fontSize: 40.0, color: Colors.white)), onPressed: () {},       
+            ),
+
+            TextFormField(
+              keyboardType: TextInputType.text,
+              decoration: InputDecoration(
+                labelText: "Nome da Criança",
+                labelStyle: TextStyle(color: Colors.pink, fontSize: 25.0)
+              ),
+            ),
+
+            TextFormField(
+              keyboardType: TextInputType.text,
+              decoration: InputDecoration(
+                labelText: "Sexo da Criança",
+                labelStyle: TextStyle(color: Colors.pink, fontSize: 25.0)
+              ),
+            ),
+
+            TextFormField(
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: "Idade da Criança",
+                labelStyle: TextStyle(color: Colors.pink, fontSize: 25.0)
+              ),
+            ),
+
+            TextFormField(
+              keyboardType: TextInputType.text,
+              decoration: InputDecoration(
+                labelText: "Nome do Responsável",
+                labelStyle: TextStyle(color: Colors.pink, fontSize: 25.0)
+              ),
+            ),
+
+            TextFormField(
+              keyboardType: TextInputType.text,
+              decoration: InputDecoration(
+                labelText: "Hora de Entrada",
+                labelStyle: TextStyle(color: Colors.pink, fontSize: 25.0)
+              ),
+            )
+
+            
+            
+          ],
+        ) ,
+     
+     )
+     ]
+        )
+     
+      
+    );
+  }
+
+
+
+
+
+Future<File> _getFile() async{} 
+
+}
+
+ 
+
+
+
+
+
+ 
